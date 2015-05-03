@@ -161,6 +161,7 @@ function new_player(settings)
 		this.ev_jump = false
 		this.ev_crouch = false
 		this.ev_sneak = false
+		this.ev_action = false
 
 		this.ev_lmb = false
 		this.ev_rmb = false
@@ -230,6 +231,7 @@ function new_player(settings)
 		this.ev_crouch = this.key_crouch
 		this.ev_jump = this.key_jump
 		this.ev_sneak = this.key_sneak
+		this.ev_action = this.key_action
 	end
 
 	function this.add_tools()
@@ -371,7 +373,7 @@ function new_player(settings)
 			0x10: sneak | scope
 			0x20: crouch
 			0x40: jump
-			0x80: * RESERVED *
+			0x80: action
 	]]
 
 	function this.get_pos()
@@ -397,7 +399,7 @@ function new_player(settings)
 		if this.ev_sneak or this.zooming then keys = keys + 0x10 end
 		if this.ev_crouch then keys = keys + 0x20 end
 		if this.ev_jump then keys = keys + 0x40 end
-		--if this.ev_aimbot then keys = keys + 0x80 end
+		if this.ev_action then keys = keys + 0x80 end
 
 		return this.angy, this.angx, keys
 	end
@@ -413,7 +415,7 @@ function new_player(settings)
 		this.ev_sneak = bit_and(keys,0x10) ~= 0
 		this.ev_crouch = bit_and(keys,0x20) ~= 0
 		this.ev_jump = bit_and(keys,0x40) ~= 0
-		--this.ev_aimbot = bit_and(keys,0x80) ~= 0
+		this.ev_action = bit_and(keys,0x80) ~= 0
 	end
 
 	function this.recoil(sec_current, recoil_y, recoil_x)
@@ -2178,6 +2180,9 @@ function new_player(settings)
 		elseif key == BTSK_SNEAK then
 			this.ev_sneak = state
 			this.key_sneak = state
+		elseif key == BTSK_ACTION then
+			this.ev_action = state
+			this.key_action = state
 		elseif key == BTSK_SCORES then
 			show_scores = state
 		elseif state and not this.menus_visible() then

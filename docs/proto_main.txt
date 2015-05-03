@@ -152,7 +152,7 @@ Iceball Base Mod:
 			0x10: sneak | scope
 			0x20: crouch
 			0x40: jump
-			0x80: * RESERVED *
+			0x80: action
 		
 		note, for C->S pid MUST be 0x00
 	

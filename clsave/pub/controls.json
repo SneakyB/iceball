@@ -20,6 +20,7 @@
 	"jump": 32,
 	"crouch": 306,
 	"sneak": 118,
+	"action": 101,
 	"reload": 114,
 	"tools": [49, 50, 51, 52, 53, 54, 55, 56, 57, 48],
 	"colorleft": 276,

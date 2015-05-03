@@ -139,6 +139,7 @@ W A S D = move/strafe
 space = jump
 left ctrl = crouch
 V = sneak
+E = action
 
 1 2 3 4 = select tool
 arrow keys = select block colour

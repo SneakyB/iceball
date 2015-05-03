@@ -146,6 +146,7 @@ BTSK_RIGHT   = controls_config.right or SDLK_d
 BTSK_JUMP    = controls_config.jump or SDLK_SPACE
 BTSK_CROUCH  = controls_config.crouch or SDLK_LCTRL
 BTSK_SNEAK   = controls_config.sneak or SDLK_v
+BTSK_ACTION   = controls_config.action or SDLK_e
 BTSK_RELOAD  = controls_config.reload or SDLK_r
 BTSK_CHATUP  = controls_config.chatup or SDLK_PAGEUP
 BTSK_CHATDN  = controls_config.chatdn or SDLK_PAGEDOWN
@@ -196,6 +197,7 @@ button_map = {
 	jump={key=BTSK_JUMP,desc="Jump"},
 	crouch={key=BTSK_CROUCH,desc="Crouch"},
 	sneak={key=BTSK_SNEAK,desc="Sneak"},
+	action={key=BTSK_ACTION,desc="Action"},
 	reload={key=BTSK_RELOAD,desc="Reload"},
 	
 	color_left={key=BTSK_COLORLEFT,desc="Color Left"},
